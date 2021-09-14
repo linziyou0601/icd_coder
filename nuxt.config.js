@@ -1,7 +1,12 @@
-export default {
+// only add `router.base = '/<repository_name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/dist/'
-  },
+    base: '/icd_coder/'
+  }
+} : {}
+
+export default {
+  ...routerBase,
 
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
