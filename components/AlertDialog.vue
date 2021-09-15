@@ -31,7 +31,7 @@
             <div>
               <fa 
                 :icon="[alertDialog.iconSet, alertDialog.iconName]"
-                :class="'dialog-icon mb-4 grad-' + alertDialog.type" 
+                :class="`dialog-icon mb-4 grad-${alertDialog.type}`" 
               />
             </div>
             <div class="dialog-title my-1">{{ alertDialog.title }}</div>
@@ -100,7 +100,7 @@ export default {
 }
 
 @supports (mask-image: paint(smooth-corners)) {
-  button.bg-grad-blue.ok-btn {
+  .ok-btn {
     --smooth-corners: 8, 4;
     mask-image: paint(smooth-corners);
     -webkit-mask-image: paint(smooth-corners);

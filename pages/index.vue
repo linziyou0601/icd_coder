@@ -11,14 +11,13 @@
     </transition>
 
     <!-- 封面區 -->
-    <section ref="index_top" class="bg-grad-color horizontal-spacer">
+    <section ref="index_top" class="bg-grad-color-A horizontal-spacer">
       <b-row class="full-height-with-nav pb-5" align-v="center">
         <b-col class="col-12 col-md-9 col-lg-6" style="z-index: 99">
           <h1 class="mb-4 title-style">國際疾病碼<br/>多標籤分類模型</h1>
           <h6 class="mb-5 subtitle-style">使用機器學習模型處理國際疾病分類碼的多標籤分類問題！</h6>
           <b-button
-            class="bg-grad-blue show_more px-5"
-            size="lg" 
+            class="bg-grad-blue show_more_btn"
             @click="scrollToElement('what_is_icd_code')"
           >
             瞭解更多
@@ -35,7 +34,7 @@
 		</section>
 
     <!-- 國際疾病碼？ -->
-    <section ref="what_is_icd_code" class="bg-bottom-color horizontal-spacer">
+    <section ref="what_is_icd_code" class="bg-grad-color-B horizontal-spacer">
       <b-row class="full-height py-5" align-v="center">
         <b-col class="col-12 col-lg-6 text-center">
           <b-img src="what-is-icd-code.png" fluid/>
@@ -49,7 +48,7 @@
 		</section>
 
     <!-- 我們做了什麼？ -->
-    <section ref="what_is_icd_code" class="bg-bottom-color horizontal-spacer">
+    <section ref="what_did_we_do" class="bg-grad-color-A horizontal-spacer">
       <b-row class="full-height py-5" align-v="center">
         <b-col class="col-12">
           <b-row align-h="center">
@@ -74,7 +73,7 @@
         </b-col>
       </b-row>
 		</section>
-    <Footer />
+    <Footer :bgClass="`bg-grad-color-B`"/>
     <AlertDialog />
   </div>
 </template>
@@ -152,8 +151,11 @@ export default {
 }
 
 /* -------------------- 瞭解更多按鈕 -------------------- */
+.show_more_btn {
+  padding: .75rem 3rem;
+}
 @supports (mask-image: paint(smooth-corners)) {
-  button.bg-grad-blue.show_more {
+  .show_more_btn {
     --smooth-corners: 16, 4;
     mask-image: paint(smooth-corners);
     -webkit-mask-image: paint(smooth-corners);

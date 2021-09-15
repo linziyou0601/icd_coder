@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar toggleable="sm" class="bg-top-color horizontal-spacer">
+      <b-navbar toggleable="sm" class="horizontal-spacer">
         <b-navbar-brand href="#" to="/" class="nav-title-style">
           IcdCoder.
         </b-navbar-brand>
@@ -150,9 +150,10 @@ export default {
   --kGreen60: #7dbd39a6;
   --kBlack: #2e3846;
   --kLightBlack: #516272;
-  --kBgTopColor: #fafff5;
-  --kBgBottomColor: #e8f9ff;
-  --kWhite90: #ffffffe6;
+  --kBgLightGreen: #fafff5;
+  --kBgLightBlue: #e8f9ff;
+  --kBgLightYellow: #FEFFE3;
+  --kBgLightPurple: #F4EBFF;
   --kWhite30: #ffffff4d;
   --kLight: #ebebeb;
 }
@@ -167,34 +168,25 @@ body {
 }
 
 /* -------------------- 背景色 -------------------- */
-.bg-top-color {
-  background-color: var(--kBgTopColor);
+.bg-grad-color-A {
+  background: -webkit-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              -webkit-linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
+  background: -moz-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              -moz-linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
+  background: -o-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              -o-linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
+  background: linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
 }
-.bg-bottom-color {
-  background-color: var(--kBgBottomColor);
-}
-.bg-grad-color {
-  background: var(--kBgBottomColor);
-  background-image: -webkit-linear-gradient(
-    to bottom,
-    var(--kBgTopColor) 0%,
-    var(--kBgBottomColor) 100%
-  );
-  background-image: -moz-linear-gradient(
-    to bottom,
-    var(--kBgTopColor) 0%,
-    var(--kBgBottomColor) 100%
-  );
-  background-image: -o-linear-gradient(
-    to bottom,
-    var(--kBgTopColor) 0%,
-    var(--kBgBottomColor) 100%
-  );
-  background-image: linear-gradient(
-    to bottom,
-    var(--kBgTopColor) 0%,
-    var(--kBgBottomColor) 100%
-  );
+.bg-grad-color-B {
+  background: -webkit-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              -webkit-linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
+  background: -moz-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              -moz-linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
+  background: -o-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              -o-linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
+  background: linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+              linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
 }
 
 /* -------------------- NAV Item樣式及動畫 -------------------- */
@@ -259,10 +251,10 @@ body {
   font-size: 36px;
   font-weight: 900;
   background: var(--kBlue);
-  background: -webkit-linear-gradient(to right, var(--kBlue) 0%, var(--kBlue60) 100%);
-  background: -moz-linear-gradient(to right, var(--kBlue) 0%, var(--kBlue60) 100%);
-  background: -o-linear-gradient(to right, var(--kBlue) 0%, var(--kBlue60) 100%);
-  background: linear-gradient(to right, var(--kBlue) 0%, var(--kBlue60) 100%);
+  background: -webkit-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
+  background: -moz-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
+  background: -o-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
+  background: linear-gradient(to right, var(--kBlue), var(--kBlue60) );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -289,38 +281,34 @@ h6 {
 
 /* -------------------- 主漸層按鈕 -------------------- */
 .bg-grad-blue {
-  background: var(--kBgBottomColor);
-  background-image: -webkit-linear-gradient(to left, var(--kBlue) 0%, var(--kBlue60) 100%);
-  background-image: -moz-linear-gradient(to left, var(--kBlue) 0%, var(--kBlue60) 100%);
-  background-image: -o-linear-gradient(to left, var(--kBlue) 0%, var(--kBlue60) 100%);
-  background-image: linear-gradient(to left, var(--kBlue) 0%, var(--kBlue60) 100%);
+  background: -webkit-linear-gradient(to left, var(--kBlue), var(--kBlue60));
+  background: -moz-linear-gradient(to left, var(--kBlue), var(--kBlue60));
+  background: -o-linear-gradient(to left, var(--kBlue), var(--kBlue60));
+  background: linear-gradient(to left, var(--kBlue), var(--kBlue60));
   border: none;
   font-size: 18px;
 }
 .bg-grad-gray {
-  background: var(--kBgBottomColor);
-  background-image: -webkit-linear-gradient(to left, var(--kBlack) 0%, var(--kLightBlack) 100%);
-  background-image: -moz-linear-gradient(to left, var(--kBlack) 0%, var(--kLightBlack) 100%);
-  background-image: -o-linear-gradient(to left, var(--kBlack) 0%, var(--kLightBlack) 100%);
-  background-image: linear-gradient(to left, var(--kBlack) 0%, var(--kLightBlack) 100%);
+  background: -webkit-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
+  background: -moz-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
+  background: -o-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
+  background: linear-gradient(to left, var(--kBlack), var(--kLightBlack));
   border: none;
   font-size: 18px;
 }
 .bg-grad-white {
-  background: var(--kBgBottomColor);
-  background-image: -webkit-linear-gradient(to bottom right, var(--kWhite90) 0%, var(--kWhite30) 50%, var(--kWhite90) 100%);
-  background-image: -moz-linear-gradient(to bottom right, var(--kWhite90) 0%, var(--kWhite30) 50%, var(--kWhite90) 100%);
-  background-image: -o-linear-gradient(to bottom right, var(--kWhite90) 0%, var(--kWhite30) 50%, var(--kWhite90) 100%);
-  background-image: linear-gradient(to bottom right, var(--kWhite90) 0%, var(--kWhite30) 50%, var(--kWhite90) 100%);
+  background: -webkit-linear-gradient(to bottom right, #FFFFFF, var(--kWhite30), #FFFFFF);
+  background: -moz-linear-gradient(to bottom right, #FFFFFF, var(--kWhite30), #FFFFFF);
+  background: -o-linear-gradient(to bottom right, #FFFFFF, var(--kWhite30), #FFFFFF);
+  background: linear-gradient(to bottom right, #FFFFFF, var(--kWhite30), #FFFFFF);
   border: none;
   font-size: 18px;
 }
 .bg-grad-purple {
-  background: var(--kBgBottomColor);
-  background-image: -webkit-linear-gradient(to left, var(--kPurple) 0%, var(--kPurple60) 100%);
-  background-image: -moz-linear-gradient(to left, var(--kPurple) 0%, var(--kPurple60) 100%);
-  background-image: -o-linear-gradient(to left, var(--kPurple) 0%, var(--kPurple60) 100%);
-  background-image: linear-gradient(to left, var(--kPurple) 0%, var(--kPurple60) 100%);
+  background: -webkit-linear-gradient(to left, var(--kPurple), var(--kPurple60));
+  background: -moz-linear-gradient(to left, var(--kPurple), var(--kPurple60));
+  background: -o-linear-gradient(to left, var(--kPurple), var(--kPurple60));
+  background: linear-gradient(to left, var(--kPurple), var(--kPurple60));
   border: none;
   font-size: 18px;
 }

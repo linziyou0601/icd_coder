@@ -1,6 +1,6 @@
 <template>
   <!-- 頁尾 -->
-  <section ref="footer" class="bg-bottom-color horizontal-spacer">
+  <section ref="footer" :class="`${$attrs.bgClass || `bg-grad-color-A`} horizontal-spacer`" v-bind="$attrs">
     <b-row class="footer-height" align-v="center">
       <b-col class="col-12 mb-2 bg-grad-purple" style="z-index: 99; min-height: 300px;">
         <h2 class="footer-title text-center mt-5">團隊成員</h2>
@@ -35,7 +35,7 @@ export default {}
 
 <style>
 @supports (mask-image: paint(smooth-corners)) {
-  div.bg-grad-purple {
+  .bg-grad-purple {
     --smooth-corners: 24, 4;
     mask-image: paint(smooth-corners);
     -webkit-mask-image: paint(smooth-corners);
