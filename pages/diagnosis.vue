@@ -4,7 +4,7 @@
       <b-button
         v-show="showToTopBtn"
         class="to-top-btn bg-grad-gray"
-        @click="scrollToElement('index_top')"
+        @click="scrollToElement('diagnosis')"
       >
         <fa :icon="['fas', 'chevron-up']" />
       </b-button>
