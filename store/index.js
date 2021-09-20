@@ -7,10 +7,12 @@ const state = () => ({
     iconName: '',
     type: '',
   },
+  _loadingDialogShow: false,
 })
 
 const getters = {
   alertDialog: (state) => state._alertDialog,
+  loadingDialogShow: (state) => state._loadingDialogShow,
 }
 
 const actions = {
@@ -32,6 +34,12 @@ const mutations = {
     state._alertDialog.iconName = ''
     state._alertDialog.type = ''
     state._alertDialog.show = false
+  },
+  fireLoadingDialog(state) {
+    state._loadingDialogShow = true
+  },
+  closeLoadingDialog(state) {
+    state._loadingDialogShow = false
   },
 }
 

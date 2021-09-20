@@ -34,6 +34,7 @@ if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule('https://unpkg.com/
 export default {
   data() {
     return {
+      pageTitle: '',
       tabValue: 0,
       links: [
         {
@@ -42,13 +43,18 @@ export default {
         },
         {
           title: '疾病碼分析',
-          link: '/tutorial'
+          link: '/diagnosis'
         },
         {
           title: '關於我們',
           link: '/about_us'
         }
       ]
+    }
+  },
+  head() {
+    return {
+      title: `${this.pageTitle} ${this.pageTitle? '-': ''} ICD Coder`,
     }
   },
   created() {
@@ -74,7 +80,7 @@ export default {
       })
     },
     routerTo(path) {
-      if (path === '/') this.$router.push(path)
+      if (path === '/' || path === '/diagnosis') this.$router.push(path)
       else this.underConstruction()
     }
   }

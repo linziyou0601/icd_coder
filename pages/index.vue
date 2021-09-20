@@ -63,7 +63,7 @@
               :key="index"
               class="col-12 col-sm-6 col-lg-4 mb-3 text-center"
             >
-              <b-card class="mb-2 px-3 py-5 bg-grad-white border-0 text-left">
+              <b-card class="mb-2 px-3 py-5 bg-grad-white what-did-we-do-card border-0 text-left">
                 <b-img :src="data.icon" style="width: 80px;" class="my-2"/>
                 <b-card-title class="my-3">{{ data.title }}</b-card-title>
                 <b-card-text class="my-4">{{ data.text }}</b-card-text>
@@ -212,18 +212,18 @@ export default {
 
 /* -------------------- 卡片區 -------------------- */
 @supports (mask-image: paint(smooth-corners)) {
-  .card {
+  .what-did-we-do-card {
     --smooth-corners: 9, 12;
     mask-image: paint(smooth-corners);
     -webkit-mask-image: paint(smooth-corners);
   }
 }
-.card.bg-grad-white .card-title {
+.what-did-we-do-card .card-title {
   color: var(--kBlack);
   font-size: 36px;
   font-weight: 700;
 }
-.card.bg-grad-white .card-text {
+.what-did-we-do-card .card-text {
   color: var(--kLightBlack);
   font-size: 16px;
   font-weight: 500;
