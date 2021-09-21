@@ -69,6 +69,7 @@ export default {
   methods: {
     ...mapMutations(['fireAlertDialog']),
     loadTabValue() {
+      console.log(this.$route.path)
       this.tabValue = this.links.findIndex(
         (element) => element.link === this.$route.path
       )
