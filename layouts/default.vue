@@ -57,6 +57,9 @@ export default {
       title: `${this.pageTitle} ${this.pageTitle? '-': ''} ICD Coder`,
     }
   },
+  mounted() {
+    this.loadTabValue()
+  },
   created() {
     this.$nuxt.$on('pageTitle', (data) => {
       this.pageTitle = data
@@ -175,23 +178,31 @@ body {
 
 /* -------------------- 背景色 -------------------- */
 .bg-grad-color-A {
-  background: -webkit-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              -webkit-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
               -webkit-linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
-  background: -moz-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              -moz-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
               -moz-linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
-  background: -o-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              -o-linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
               -o-linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
-  background: linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              linear-gradient(to bottom left, var(--kBgLightYellow), var(--kBgLightPurple)),
               linear-gradient(to bottom, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
 }
 .bg-grad-color-B {
-  background: -webkit-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              -webkit-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
               -webkit-linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
-  background: -moz-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              -moz-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
               -moz-linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
-  background: -o-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              -o-linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
               -o-linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
-  background: linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
+  background: url("~static/Screentone.png") round,
+              linear-gradient(to top left, var(--kBgLightYellow), var(--kBgLightPurple)),
               linear-gradient(to top, var(--kBgLightGreen), transparent, var(--kBgLightBlue));
 }
 
