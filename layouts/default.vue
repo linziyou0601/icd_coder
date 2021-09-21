@@ -69,9 +69,11 @@ export default {
   methods: {
     ...mapMutations(['fireAlertDialog']),
     loadTabValue() {
-      console.log(this.$route.path)
+      let path = this.$route.path
+      path = path.endsWith('/') ? path.slice(0, -1) : path;
+      console.log(path)
       this.tabValue = this.links.findIndex(
-        (element) => element.link === this.$route.path
+        (element) => element.link.endsWith(path)
       )
     },
     underConstruction() {
