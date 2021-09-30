@@ -8,11 +8,18 @@ const state = () => ({
     type: '',
   },
   _loadingDialogShow: false,
+  _icdDataDialog: {
+    show: false,
+    code: '',
+    title: '',
+    description: '',
+  },
 })
 
 const getters = {
   alertDialog: (state) => state._alertDialog,
   loadingDialogShow: (state) => state._loadingDialogShow,
+  icdDataDialog: (state) => state._icdDataDialog,
 }
 
 const actions = {
@@ -40,6 +47,15 @@ const mutations = {
   },
   closeLoadingDialog(state) {
     state._loadingDialogShow = false
+  },
+  fireIcdDataDialog(state, { code, title, description }) {
+    state._icdDataDialog.code = code
+    state._icdDataDialog.title = title
+    state._icdDataDialog.description = description
+    state._icdDataDialog.show = true
+  },
+  closeIcdDataDialog(state) {
+    state._icdDataDialog.show = false
   },
 }
 

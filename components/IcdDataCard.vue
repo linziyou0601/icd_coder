@@ -1,13 +1,13 @@
 <template>
   <!-- ICD資料卡 -->
-  <section class="m-2" v-bind="$attrs">
+  <section class="m-2 cursor-pointer" v-bind="$attrs">
     <b-row class="icd-card py-3 px-3" align-v="center">
-      <b-col class="icd-data-code-area">
-        <div class="icd-data-code bg-grad-gray my-2">{{ $attrs.icd_code }}</div>
+      <b-col class="icd-card-code-area">
+        <div class="icd-card-code bg-grad-gray my-2">{{ $attrs.code }}</div>
       </b-col>
       <b-col>
-        <div class="icd-data-title">{{ $attrs.icd_title }}</div>
-        <div class="icd-data-content">percentage: {{ $attrs.percentage }}</div>
+        <div class="icd-card-title">{{ $attrs.title }}</div>
+        <div class="icd-card-content">percentage: {{ $attrs.percentage }}</div>
       </b-col>
     </b-row>
   </section>
@@ -17,7 +17,7 @@
 export default {}
 </script>
 
-<style>
+<style scoped>
 .icd-card {
   position: relative;
   background: #FFFFFF;
@@ -26,11 +26,11 @@ export default {}
   -webkit-box-shadow: 1px 1px 20px #EDEDEDA6;
 	-moz-box-shadow: 1px 1px 20px #EDEDEDA6;
 }
-.icd-data-code-area {
+.icd-card-code-area {
   min-width: 90px;
   max-width: 90px;
 }
-.icd-data-code {
+.icd-card-code {
   color: var(--kLight);
   font-size: 14px;
   font-weight: 900;
@@ -43,12 +43,12 @@ export default {}
   mask-image: paint(smooth-corners);
   -webkit-mask-image: paint(smooth-corners);
 }
-.icd-data-title {
+.icd-card-title {
   color: var(--kDark);
   font-size: 16px;
   font-weight: 700;
 }
-.icd-data-content {
+.icd-card-content {
   color: var(--kLightDark);
   font-size: 10px;
   font-weight: 500;

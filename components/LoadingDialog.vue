@@ -20,14 +20,15 @@
     >
       <b-row>
         <b-col class="text-center py-5">
-          <div class="text-center">
+          <b-img src="logo_3d.png" class="logo"/>
+          <div class="text-center mt-3 mb-1">
             <b-spinner small type="grow" label="Small Spinning"></b-spinner>&nbsp;
             <b-spinner small variant="primary" type="grow" label="Small Spinning"></b-spinner>&nbsp;
             <b-spinner small variant="success" type="grow" label="Small Spinning"></b-spinner>&nbsp;
             <b-spinner small variant="danger" type="grow" label="Small Spinning"></b-spinner>&nbsp;
             <b-spinner small variant="warning" type="grow" label="Small Spinning"></b-spinner>
           </div>
-          <div class="dialog-content my-1">請稍候</div>
+          <div class="dialog-content mt-3 mb-1">請稍候</div>
         </b-col>
       </b-row>
     </b-modal>
@@ -54,7 +55,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* 隱藏SVG取色參照物件 */
 .svg-settings {
     position: absolute !important;
@@ -66,6 +67,10 @@ export default {
 
 .grad-info path {
   fill: url(#info);
+}
+
+.logo {
+  width: 70px;
 }
 
 .dialog-content {

@@ -3,7 +3,8 @@
     <div>
       <b-navbar toggleable="sm" class="horizontal-spacer">
         <b-navbar-brand href="#" to="/" class="nav-title-style">
-          IcdCoder.
+          <b-img src="logo_3d.png" class="nav-logo"/>
+          <span>IcdCoder.</span>
         </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
@@ -70,24 +71,13 @@ export default {
     ...mapMutations(['fireAlertDialog']),
     loadTabValue() {
       let path = this.$route.path
-      path = path.endsWith('/') ? path.slice(0, -1) : path;
-      console.log(path)
+      path = path.endsWith('/') ? path.slice(0, -1) : path
       this.tabValue = this.links.findIndex(
         (element) => element.link.endsWith(path)
       )
     },
-    underConstruction() {
-      this.fireAlertDialog({
-        title: '敬請期待',
-        content: '該頁面建置中，敬請期待！',
-        iconSet: 'fas',
-        iconName: 'tools',
-        type: 'info'
-      })
-    },
     routerTo(path) {
-      if (path === '/' || path === '/diagnosis') this.$router.push(path)
-      else this.underConstruction()
+      this.$router.push(path)
     }
   }
 }
@@ -177,6 +167,8 @@ body {
   font-family: 'SweiGothicCJKtc', Helvetica, 'PingFang TC', '微軟正黑體',
     'Microsoft JhengHei', sans-serif !important;
   font-weight: 700;
+  padding-right:0px !important;
+  margin-right:0px !important;
 }
 
 /* -------------------- 背景色 -------------------- */
@@ -210,6 +202,10 @@ body {
 }
 
 /* -------------------- NAV Item樣式及動畫 -------------------- */
+.nav-logo {
+  width: 45px;
+  margin-top: -5px;
+}
 .nav-item > a,
 .nav-item > a:hover {
   color: var(--kBlack) !important;
@@ -235,6 +231,9 @@ body {
 .nav-item > .nuxt-link-exact-active.nuxt-link-active::after,
 .nav-active > a::after {
   opacity: 1;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 
 /* -------------------- 高度及邊距 -------------------- */

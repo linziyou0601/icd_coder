@@ -35,7 +35,7 @@
               />
             </div>
             <div class="dialog-title my-1">{{ alertDialog.title }}</div>
-            <div class="dialog-content my-1">{{ alertDialog.content }}</div>
+            <div class="dialog-content mt-1 mb-3">{{ alertDialog.content }}</div>
             <b-button class="bg-grad-blue ok-btn mt-3" @click="ok()">確定</b-button>
           </b-col>
         </b-row>
@@ -64,16 +64,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* 隱藏SVG取色參照物件 */
 .svg-settings {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
+/* -------------------- icon顏色 -------------------- */
 .grad-info path {
   fill: url(#info);
 }
@@ -83,11 +84,12 @@ export default {
 .grad-error path {
   fill: url(#error);
 }
+
+/* -------------------- 資料物件 -------------------- */
 .dialog-icon {
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 700;
 }
-
 .dialog-title {
   color: var(--kBlack);
   font-size: 36px;

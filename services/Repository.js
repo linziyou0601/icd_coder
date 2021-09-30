@@ -1,5 +1,7 @@
 import clientAPI from './_AxiosConfig'
 
+const LoremText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+
 const baseURL = 'http://localhost'
 export default {
   getAnalyzedResult(diagnosis) {
@@ -10,28 +12,33 @@ export default {
       setTimeout(() => resolve({
         data: [
           {
-            icd_code: '49390',
-            icd_title: 'asthma',
+            code: '49390',
+            title: 'asthma',
+            description: LoremText,
             percentage: '1.000'
           },
           {
-            icd_code: '4111',
-            icd_title: 'coronari intermedi syndrom',
+            code: '4111',
+            title: 'coronari intermedi syndrom',
+            description: LoremText,
             percentage: '0.901'
           },
           {
-            icd_code: '78039',
-            icd_title: 'convuls',
+            code: '78039',
+            title: 'convuls',
+            description: LoremText,
             percentage: '0.874'
           },
           {
-            icd_code: '5990',
-            icd_title: 'infect site tract urinari',
+            code: '5990',
+            title: 'infect site tract urinari',
+            description: LoremText,
             percentage: '0.849'
           },
           {
-            icd_code: '4280',
-            icd_title: 'congest failur heart',
+            code: '4280',
+            title: 'congest failur heart',
+            description: LoremText,
             percentage: '0.830'
           }
         ]
