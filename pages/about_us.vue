@@ -11,7 +11,7 @@
     </transition>
 
     <!-- 封面區 -->
-    <section ref="about_top" class="bg-grad-color-A horizontal-spacer">
+    <section ref="about_top" class="bg-grad-color-B horizontal-spacer">
       <b-row class="full-height-with-nav pb-5" align-v="center">
         <b-col cols="12" md="10" lg="6" offset-md="1" offset-lg="3" class="text-center my-5" style="z-index: 99">
           <h1 class="mb-4 title-style">關於我們</h1>
@@ -20,7 +20,7 @@
             class="bg-grad-blue show-more-btn"
             @click="scrollToElement('motivation')"
           >
-            瞭解更多
+            繼續閱讀
           </b-button>
         </b-col>
       </b-row>
@@ -31,7 +31,7 @@
 		</section>
 
     <!-- 研究動機 -->
-    <section ref="motivation" class="bg-grad-color-B horizontal-spacer">
+    <section ref="motivation" class="bg-grad-color-A horizontal-spacer">
       <b-row class="full-height py-5" align-v="center">
         <b-col cols="12" lg="6">
           <h2 class="mb-4 header-style">研究動機</h2>
@@ -45,7 +45,7 @@
 		</section>
 
     <!-- 研究目的 -->
-    <section ref="purpose" class="bg-grad-color-A horizontal-spacer">
+    <section ref="purpose" class="bg-grad-color-B horizontal-spacer">
       <b-row class="full-height py-5" align-v="center">
         <b-col cols="12" lg="6" class="text-center">
           <b-img src="purpose.png" fluid/>
@@ -69,7 +69,7 @@
         </b-col>
       </b-row>
 		</section>
-    <Footer :bgClass="`bg-grad-color-B`"/>
+    <Footer :bg-class="`bg-grad-color-A`"/>
     <AlertDialog />
   </div>
 </template>
@@ -78,7 +78,7 @@
 export default {
   data() {
     return {
-      pageTitle: '',
+      pageTitle: '關於我們',
       showToTopBtn: false,
       cardData: [
         {
@@ -140,9 +140,6 @@ export default {
   width: 686px;
 }
 @media screen and (max-width: 1200px){
-  .deco-wrap {
-    margin-left: -96px;
-  }
   .left-deco {
     top: calc(150px);
     left: -60px;
@@ -154,7 +151,7 @@ export default {
     width: 580px;
   }
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1183px){
   .deco-wrap {
     margin-left: -96px;
   }
@@ -169,9 +166,9 @@ export default {
     width: 500px;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 752px){
   .deco-wrap {
-    margin-left: -15px;
+    margin-left: -48px;
   }
   .left-deco {
     top: calc(150px);

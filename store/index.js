@@ -13,6 +13,7 @@ const state = () => ({
     code: '',
     title: '',
     description: '',
+    percentage: 0,
   },
 })
 
@@ -48,10 +49,11 @@ const mutations = {
   closeLoadingDialog(state) {
     state._loadingDialogShow = false
   },
-  fireIcdDataDialog(state, { code, title, description }) {
+  fireIcdDataDialog(state, { code, title, description, percentage }) {
     state._icdDataDialog.code = code
     state._icdDataDialog.title = title
     state._icdDataDialog.description = description
+    state._icdDataDialog.percentage = percentage
     state._icdDataDialog.show = true
   },
   closeIcdDataDialog(state) {

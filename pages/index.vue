@@ -11,7 +11,7 @@
     </transition>
 
     <!-- 封面區 -->
-    <section ref="index_top" class="bg-grad-color-A horizontal-spacer">
+    <section ref="index_top" class="bg-grad-color-B horizontal-spacer">
       <b-row class="full-height-with-nav pb-5 index-top-text-area" align-v="center">
         <b-col cols="12" md="9" lg="6" style="z-index: 99">
           <h1 class="mb-4 title-style">國際疾病碼<br/>多標籤分類模型</h1>
@@ -34,7 +34,7 @@
 		</section>
 
     <!-- 國際疾病碼？ -->
-    <section ref="icd_code_intro" class="bg-grad-color-B horizontal-spacer">
+    <section ref="icd_code_intro" class="bg-grad-color-A horizontal-spacer">
       <b-row class="full-height py-5" align-v="center">
         <b-col cols="12" lg="6" class="text-center">
           <b-img src="icd-code-intro.png" fluid/>
@@ -48,7 +48,7 @@
 		</section>
 
     <!-- 我們做了什麼？ -->
-    <section ref="we_do_intro" class="bg-grad-color-A horizontal-spacer">
+    <section ref="we_do_intro" class="bg-grad-color-B horizontal-spacer">
       <b-row class="full-height py-5" align-v="center">
         <b-col cols="12">
           <b-row align-h="center">
@@ -74,7 +74,7 @@
         </b-col>
       </b-row>
 		</section>
-    <Footer :bgClass="`bg-grad-color-B`"/>
+    <Footer :bg-class="`bg-grad-color-A`"/>
     <AlertDialog />
   </div>
 </template>
@@ -139,16 +139,13 @@ export default {
   width: 1100px;
 }
 @media screen and (max-width: 1200px){
-  .deco-wrap {
-    margin-left: -96px;
-  }
   .main-deco {
     top: calc(40px + 50vh - 606px / 2);
     left: calc(100vw - 800px + 160px);
     width: 800px;
   }
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1183px){
   .deco-wrap {
     margin-left: -96px;
   }
@@ -158,9 +155,9 @@ export default {
     width: 550px;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 752px){
   .deco-wrap {
-    margin-left: -15px;
+    margin-left: -48px;
   }
   .main-deco {
     top: calc(40px + 50vh - 341px / 2 + 200px);
@@ -169,6 +166,9 @@ export default {
   }
 }
 @media screen and (max-width: 640px){
+  .deco-wrap {
+    margin-left: -48px;
+  }
   .index-top-text-area {
     align-items: start !important;
   }

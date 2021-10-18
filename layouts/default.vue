@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar toggleable="sm" class="horizontal-spacer">
+      <b-navbar toggleable="lg" class="horizontal-spacer bg-grad-color-A">
         <b-navbar-brand href="#" to="/" class="nav-title-style">
           <b-img src="logo_3d.png" class="nav-logo"/>
           <span>IcdCoder.</span>
@@ -15,6 +15,7 @@
               :class="{
                 'mx-0': true,
                 'mx-md-3': true,
+                'text-center': true,
                 'nav-active': tabValue == index
               }"
               @click="routerTo(link.link)"
@@ -49,6 +50,10 @@ export default {
         {
           title: '關於我們',
           link: '/about_us'
+        },
+        {
+          title: '模型設計',
+          link: '/model_design'
         }
       ]
     }
@@ -202,9 +207,33 @@ body {
 }
 
 /* -------------------- NAV Item樣式及動畫 -------------------- */
+.nav-title-style {
+  font-size: 36px;
+  font-weight: 900;
+  background: var(--kBlue);
+  background: -webkit-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
+  background: -moz-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
+  background: -o-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
+  background: linear-gradient(to right, var(--kBlue), var(--kBlue60) );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .nav-logo {
-  width: 45px;
+  width: 40px;
   margin-top: -5px;
+}
+@media screen and (max-width: 600px){
+  .nav-title-style {
+    font-size: 30px;
+  }
+  .nav-logo {
+    width: 35px;
+  }
+}
+.navbar-toggler {
+  font-size: 1rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 .nav-item > a,
 .nav-item > a:hover {
@@ -263,20 +292,13 @@ body {
     padding-left: 3rem !important;
     padding-right: 3rem !important;
   }
+  .navbar.horizontal-spacer {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 /* -------------------- 標題及內文樣式 -------------------- */
-.nav-title-style {
-  font-size: 36px;
-  font-weight: 900;
-  background: var(--kBlue);
-  background: -webkit-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
-  background: -moz-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
-  background: -o-linear-gradient(to right, var(--kBlue), var(--kBlue60) );
-  background: linear-gradient(to right, var(--kBlue), var(--kBlue60) );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 h1 {
   color: var(--kBlack);
   font-size: 64px;

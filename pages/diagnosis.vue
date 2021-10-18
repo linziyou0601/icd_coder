@@ -11,7 +11,7 @@
     </transition>
 
     <!-- 封面區 -->
-    <section ref="diagnosis" class="bg-grad-color-A horizontal-spacer">
+    <section ref="diagnosis" class="bg-grad-color-B horizontal-spacer">
       <b-row class="full-height-with-nav pb-5" align-h="between">
         <!-- 病歷摘要輸入 -->
         <b-col cols="12" lg="6">
@@ -25,7 +25,7 @@
             ></b-form-textarea>
             <b-button
               class="bg-grad-blue analyze-btn mb-3"
-              @click="analyze"
+              @click="fetchResults"
             >
               分析 (Mock)
             </b-button>
@@ -55,7 +55,7 @@
       </b-row>
 		</section>
 
-    <Footer :bgClass="`bg-grad-color-B`"/>
+    <Footer :bg-class="`bg-grad-color-A`"/>
     <AlertDialog />
     <LoadingDialog />
     <IcdDataDialog />
@@ -93,32 +93,28 @@ export default {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
       this.showToTopBtn = currentScrollPosition > 200
     },
-    async fetchResults() {
-      try {
-        this.fireLoadingDialog()
-        const response = await Repository.getAnalyzedResultMock(this.diagnosis)
-        this.result = response.data
-      } catch (e) {
-        this.fireAlertDialog({
-          title: '錯誤',
-          content: '取得資料失敗！',
-          iconSet: 'fas',
-          iconName: 'times',
-          type: 'error'
-        })
-      } finally {
-        this.closeLoadingDialog()
-      }
-    },
-    analyze() {
+    fetchResults() {
       this.result = []
-      this.fetchResults()
+      this.fireLoadingDialog()
+      Repository.getAnalyzedResultMock(this.diagnosis)
+        .then((res) => { this.result = res.data })
+        .catch((_) => {
+          this.fireAlertDialog({
+            title: '錯誤',
+            content: '取得資料失敗！',
+            iconSet: 'fas',
+            iconName: 'times',
+            type: 'error'
+          })
+        })
+        .finally(() => this.closeLoadingDialog())
     },
     icdDataShow(icdData) {
       this.fireIcdDataDialog({
         code: icdData.code,
         title: icdData.title,
         description: icdData.description,
+        percentage: icdData.percentage,
       })
     }
   },
