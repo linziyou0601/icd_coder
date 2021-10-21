@@ -30,7 +30,7 @@
       <b-row class="full-height-with-nav pb-5" align-v="center">
         <b-col cols="12" md="10" lg="6" offset-md="1" offset-lg="3" class="text-center my-5" style="z-index: 99">
           <h1 class="mb-4 title-style">模型設計</h1>
-          <h6 class="mb-5 subtitle-style">我們的模型架構Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+          <h6 class="mb-5 subtitle-style"></h6>
           <b-button
             class="bg-grad-blue show-more-btn"
             @click="scrollToElement('diag_d_m_3')"

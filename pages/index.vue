@@ -54,7 +54,7 @@
           <b-row align-h="center">
             <b-col cols="12" md="10" lg="8" class="text-center">
               <h2 class="mb-4 header-style">我們做了什麼</h2>
-              <h5 class="mb-5 content-style">當前研究者關注於加強與改變模型架構或處理流程。我們則是針對前處理及擴展資訊為研究方向，期望能發現尚未被充分注意到的部分進行篩選處理與強化。</h5>
+              <h5 class="mb-5 content-style">透過持續改進模型內及資料清洗之演算法，著重於嘗試使用不同的演算法來改進模型本身的缺陷</h5>
             </b-col>
           </b-row>
           <b-row align-h="center">
@@ -87,19 +87,19 @@ export default {
       showToTopBtn: false,
       cardData: [
         {
-          icon: "icons8_brain_96px.png",
+          icon: "icons8_conversion_96px.png",
           title: "刪減病摘雜訊",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+          text: "透過在輸入資料前就將大量對模型而言無法提升績效之資料刪減或簡化來提升績效",
         },
         {
-          icon: "icons8_filter_96px.png",
-          title: "刪減病摘雜訊",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+          icon: "icons8_plugin_96px.png",
+          title: "組合不同學習模型",
+          text: "透過組合目前State-Of-Art模型來嘗試組合各模型不同優點，或減少單一模型之缺點",
         },
         {
-          icon: "icons8_laptop_coding_96px.png",
-          title: "刪減病摘雜訊",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+          icon: "icons8_web_96px.png",
+          title: "可視化應用程式",
+          text: "透過使用現代Web UI介面實際介接機器學習模型API，來讓研究不僅只局限於研究人員，更可擴及至一般的使用者",
         }
       ]
     }

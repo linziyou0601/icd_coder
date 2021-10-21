@@ -15,7 +15,7 @@
       <b-row class="full-height-with-nav pb-5" align-v="center">
         <b-col cols="12" md="10" lg="6" offset-md="1" offset-lg="3" class="text-center my-5" style="z-index: 99">
           <h1 class="mb-4 title-style">關於我們</h1>
-          <h6 class="mb-5 subtitle-style">我們是Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+          <h6 class="mb-5 subtitle-style"></h6>
           <b-button
             class="bg-grad-blue show-more-btn"
             @click="scrollToElement('motivation')"
@@ -82,19 +82,19 @@ export default {
       showToTopBtn: false,
       cardData: [
         {
-          icon: "icons8_filter_96px.png",
-          title: "刪減病歷摘要雜訊部分萃取關鍵資訊",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+          icon: "icons8_brain_96px.png",
+          title: "減少對於所需人力投入量",
+          text: "由於機器模型的在各行業的應用能夠逐漸協助相關人力能夠逐漸抽離並加強單一人員之產出，故此研究之目的之一為盡量減少需要執行作業之人力",
         },
         {
-          icon: "icons8_layers_96px.png",
-          title: "使用機器學習模型針對關鍵資訊擴展",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+          icon: "icons8_programming_96px.png",
+          title: "協助相關醫學應用程式之發展",
+          text: "目前對於醫學相關商業應用程式仍未成熟，故希望此研究能夠推動相關之機器學習之於醫學商業化的應用",
         },
         {
           icon: "icons8_goal_96px.png",
-          title: "期望提高資料品質與績效降低訓練成本",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+          title: "輔助增加人工判斷之準確度",
+          text: "原先依靠純手工分析及處理的效率較低，同時也會因為人員身心理因素及能力因素導致的判斷效率不一，而此研究希望能夠減少個人因素對於判斷能力的依賴",
         }
       ]
     }
