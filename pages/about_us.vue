@@ -52,6 +52,7 @@
         </b-col>
         <b-col cols="12" lg="6">
           <h2 class="my-4 header-style">研究目的</h2>
+          <h5 class="mb-5 content-style">開發國際疾病碼分類應用程式輔助醫療人員，希望對病摘及相關資料的智慧分析能力及輔助能力的提升，能夠達到：</h5>
           <b-card 
             v-for="(data, index) in cardData"
             :key="index"

@@ -7,9 +7,9 @@
         <b-row class="px-5 mt-4" align-h="center">
           <!-- 指導教授 -->
           <b-col cols="12" md="6" xl="4" class="p-3 mb-2">
-            <div class="footer-subtitle">指導教授</div>
+            <div class="footer-subtitle">專案資訊</div>
             <div class="footer-content mt-2">
-              許中川&emsp;教授<br/>國立雲林科技大學資訊管理系暨研究所
+              國際碼版本 ICD 9/10<br/>國立雲林科技大學資訊管理系暨研究所
             </div>
           </b-col>
           <!-- 指導教授 -->
