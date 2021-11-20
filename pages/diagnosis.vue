@@ -27,7 +27,7 @@
               class="bg-grad-blue analyze-btn mb-3"
               @click="fetchResults"
             >
-              分析 (Mock)
+              分析
             </b-button>
           </b-card>
         </b-col>
@@ -38,16 +38,27 @@
             <h2 class="dianosis-panel-title mt-2">分析結果</h2>
             <b-row class="my-3">
               <b-col
-                v-for="(data, index) in result"
+                v-for="(data, index) in resultSortedByPercentage"
                 :key="index"
                 cols="12" lg="6"
               >
                 <IcdDataCard
+                  v-if="index<10 || isExpanded"
                   :code="data.code"
                   :title="data.title"
                   :percentage="data.percentage"
                   @click.native="icdDataShow(data)"
                 />
+              </b-col>
+              <b-col v-if="resultSortedByPercentage.length>10" cols="12">
+                <div class="text-center mt-3">
+                  <fa 
+                    :icon="['fas', `chevron-${isExpanded? 'up': 'down'}`]"
+                    class="expand-btn cursor-pointer"
+                    :alt="`${isExpanded? '收點': '展開'}`"
+                    @click="isExpanded = !isExpanded"
+                  />
+                </div>
               </b-col>
             </b-row>
           </b-card>
@@ -72,6 +83,13 @@ export default {
       showToTopBtn: false,
       diagnosis: '',
       result: [],
+      isExpanded: false,
+    }
+  },
+  computed: {
+    resultSortedByPercentage() {
+      const copiedResult = [...this.result]
+      return copiedResult.sort((a, b)=> Number(b.percentage) - Number(a.percentage))
     }
   },
   created() {
@@ -96,7 +114,7 @@ export default {
     fetchResults() {
       this.result = []
       this.fireLoadingDialog()
-      Repository.getAnalyzedResultMock(this.diagnosis)
+      Repository.getAnalyzedResult(this.diagnosis)
         .then((res) => { this.result = res.data })
         .catch((_) => {
           this.fireAlertDialog({
@@ -145,7 +163,7 @@ export default {
   border-radius: 20px;
 }
 
-/* -------------------- 瞭解更多按鈕 -------------------- */
+/* -------------------- 分析按鈕 -------------------- */
 .analyze-btn {
   padding: .75rem 3rem;
 }
@@ -155,5 +173,9 @@ export default {
     mask-image: paint(smooth-corners);
     -webkit-mask-image: paint(smooth-corners);
   }
+}
+.expand-btn {
+  font-size: 2.2rem;
+  filter: drop-shadow(0px 1px 5px #FFFFFF40);
 }
 </style>
