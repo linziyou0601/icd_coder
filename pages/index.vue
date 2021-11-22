@@ -134,9 +134,9 @@ export default {
 }
 .main-deco {
   position: absolute;
-  top: calc(40px + 50vh - 834px / 2);
-  left: calc(100vw - 1100px + 140px);
-  width: 1100px;
+  top: calc(40px + 50vh - 720px / 2);
+  left: calc(100vw - 900px + 140px);
+  width: 950px;
 }
 @media screen and (max-width: 1200px){
   .main-deco {

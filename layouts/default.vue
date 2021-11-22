@@ -2,12 +2,12 @@
   <div id="app">
     <div>
       <b-navbar toggleable="lg" class="horizontal-spacer bg-grad-color-A">
-        <b-navbar-brand href="#" to="/" class="nav-title-style">
+        <b-navbar-brand href="#" to="/" class="nav-title-style" style="z-index: 99">
           <b-img src="logo_3d.png" class="nav-logo"/>
           <span>IcdCoder.</span>
         </b-navbar-brand>
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-        <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-toggle target="nav-collapse" style="z-index: 99"></b-navbar-toggle>
+        <b-collapse id="nav-collapse" style="z-index: 99" is-nav>
           <b-navbar-nav v-model="tabValue" class="ml-auto">
             <b-nav-item
               v-for="(link, index) in links"
