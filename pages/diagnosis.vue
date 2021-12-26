@@ -17,9 +17,14 @@
         <b-col cols="12" lg="6">
           <b-card class="bg-grad-white dianosis-panel px-3 px-lg-5 py-5 mr-lg-3 mb-5 mb-lg-0">
             <h2 class="dianosis-panel-title mt-2">病歷摘要</h2>
+            <b-row class="pt-4 px-2 mt-1">
+              <b-col cols="auto" class="input-label">機率閾值</b-col>
+              <b-col><b-form-input v-model="threshold" type="range" min="0" max="100"></b-form-input></b-col>
+              <b-col cols="auto" class="input-label">{{ threshold }}%</b-col>
+            </b-row>
             <b-form-textarea
               v-model="diagnosis"
-              class="input-panel p-4 my-4"
+              class="input-panel py-4 mb-4 mt-2"
               placeholder="請輸入病摘"
               rows="18"
             ></b-form-textarea>
@@ -92,6 +97,7 @@ export default {
       diagnosesJson,
       pageTitle: '疾病碼分析',
       showToTopBtn: false,
+      threshold: 30,
       diagnosis: '',
       result: [],
       isExpanded: false,
@@ -99,7 +105,7 @@ export default {
   },
   computed: {
     resultSortedByPercentage() {
-      const copiedResult = [...this.result]
+      const copiedResult = [...this.result].filter((el) => el.percentage >= this.threshold/100)
       return copiedResult.sort((a, b)=> Number(b.percentage) - Number(a.percentage))
     }
   },
@@ -172,6 +178,10 @@ export default {
   font-weight: 900;
 }
 /* -------------------- 輸入區 -------------------- */
+.input-label {
+  color: var(--kDark);
+  font-size: var(--diagInput);
+}
 .input-panel {
   color: var(--kLightDark);
   font-size: var(--diagInput);
