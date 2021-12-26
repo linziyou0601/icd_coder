@@ -240,12 +240,12 @@ export default {
 }
 .purpose-item-card .card-title {
   color: var(--kBlack);
-  font-size: 24px;
+  font-size: var(--cardTitle);
   font-weight: 700;
 }
 .purpose-item-card .card-text {
   color: var(--kLightBlack);
-  font-size: 16px;
+  font-size: var(--cardText);
   font-weight: 500;
 }
 .purpose-item-card .icon-area {

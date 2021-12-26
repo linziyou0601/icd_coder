@@ -243,12 +243,12 @@ export default {
 }
 .we-do-card .card-title {
   color: var(--kBlack);
-  font-size: 36px;
+  font-size: var(--cardTitle);
   font-weight: 700;
 }
 .we-do-card .card-text {
   color: var(--kLightBlack);
-  font-size: 16px;
+  font-size: var(--cardText);
   font-weight: 500;
 }
 </style>

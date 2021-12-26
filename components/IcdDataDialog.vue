@@ -81,10 +81,10 @@ export default {
 }
 .dialog-code {
   color: var(--kLight);
-  font-size: 14px;
-  line-height: 24px;
-  min-width: 100px;
-  max-width: 100px;
+  font-size: var(--icdDialogCode);
+  line-height: var(--icdDialogTitle);
+  min-width: var(--icdDialogCodeSquare);
+  max-width: var(--icdDialogCodeSquare);
   font-weight: 900;
   border-radius: 5px 5px 20px 5px;
   text-align: center;
@@ -95,17 +95,17 @@ export default {
 }
 .dialog-title {
   color: var(--kBlack);
-  font-size: 24px;
+  font-size: var(--icdDialogTitle);
   font-weight: 700;
 }
 .dialog-description {
   color: var(--kLightBlack);
-  font-size: 18px;
+  font-size: var(--icdDialogDesc);
   font-weight: 500;
 }
 .dialog-percentage {
   color: var(--kLightBlack);
-  font-size: 16px;
+  font-size: var(--icdDialogPerc);
   font-weight: 500;
 }
 

@@ -45,17 +45,17 @@ export default {}
 }
 .footer-title {
   color: var(--kLight);
-  font-size: 48px;
+  font-size: var(--ftTitle);
   font-weight: 700;
 }
 .footer-subtitle {
   color: var(--kLight);
-  font-size: 24px;
+  font-size: var(--ftSubTitle);
   font-weight: 700;
 }
 .footer-content {
   color: var(--kLight);
-  font-size: 18px;
+  font-size: var(--ftContent);
   font-weight: 500;
 }
 </style>

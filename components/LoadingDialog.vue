@@ -75,7 +75,7 @@ export default {
 
 .dialog-content {
   color: var(--kLightBlack);
-  font-size: 18px;
+  font-size: var(--dialogContent);
   font-weight: 500;
 }
 </style>

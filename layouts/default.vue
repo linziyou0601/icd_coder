@@ -23,6 +23,16 @@
               {{ link.title }}
             </b-nav-item>
           </b-navbar-nav>
+          <div class="text-center">
+            <b-button
+              size="lg"
+              variant="transparent"
+              class="mb-2"
+              @click="lgFontSize = !lgFontSize"
+            >
+              <fa :icon="['fas', `search-${lgFontSize ? 'minus': 'plus'}`]" />
+            </b-button>
+          </div>
         </b-collapse>
       </b-navbar>
     </div>
@@ -38,6 +48,7 @@ export default {
     return {
       pageTitle: '',
       tabValue: 0,
+      lgFontSize: false,
       links: [
         {
           title: '首頁',
@@ -61,10 +72,54 @@ export default {
   head() {
     return {
       title: `${this.pageTitle} ${this.pageTitle? '-': ''} ICD Coder`,
+      bodyAttrs: {
+        style: this.fontSizeStyleStr,
+      },
     }
   },
   mounted() {
     this.loadTabValue()
+  },
+  computed: {
+    btnFS() { return this.lgFontSize? '26px': '18px' },
+    h1() { return this.lgFontSize? '72px': '64px' },
+    h2() { return this.lgFontSize? '56px': '48px' },
+    h5() { return this.lgFontSize? '32px': '24px' },
+    h6() { return this.lgFontSize? '26px': '18px' },
+    navItem() { return this.lgFontSize? '1.25rem': '1rem' },
+    cardTitle() { return this.lgFontSize? '44px': '36px' },
+    cardText() { return this.lgFontSize? '24px': '16px' },
+    dialogTitle() { return this.lgFontSize? '44px': '36px' },
+    dialogContent() { return this.lgFontSize? '26px': '18px' },
+
+    ftTitle() { return this.lgFontSize? '56px': '48px' },
+    ftSubTitle() { return this.lgFontSize? '32px': '24px' },
+    ftContent() { return this.lgFontSize? '26px': '18px' },
+    diagPanelTitle() { return this.lgFontSize? '36px': '28px' },
+    diagInput() { return this.lgFontSize? '1.5rem': '1rem' },
+
+    icdCodeSquareWrap() { return this.lgFontSize? '115px': '90px' },
+    icdCodeSquare() { return this.lgFontSize? '85px': '65px' },
+    icdCode() { return this.lgFontSize? '22px': '14px' },
+    icdTitle() { return this.lgFontSize? '24px': '16px' },
+    icdContent() { return this.lgFontSize? '18px': '10px' },
+
+    icdDialogCodeSquare() { return this.lgFontSize? '110px': '100px' },
+    icdDialogCode() { return this.lgFontSize? '22px': '14px' },
+    icdDialogTitle() { return this.lgFontSize? '32px': '24px' },
+    icdDialogDesc() { return this.lgFontSize? '26px': '18px' },
+    icdDialogPerc() { return this.lgFontSize? '24px': '16px' },
+    fontSizeStyleStr() {
+      const variables = [
+        'btnFS', 'h1', 'h2', 'h5', 'h6', 'navItem', 'cardTitle', 'cardText', 'dialogTitle', 'dialogContent',
+        'ftTitle', 'ftSubTitle', 'ftContent', 'diagPanelTitle', 'diagInput',
+        'icdCodeSquareWrap', 'icdCodeSquare', 'icdCode', 'icdTitle', 'icdContent',
+        'icdDialogCodeSquare', 'icdDialogCode', 'icdDialogTitle', 'icdDialogDesc', 'icdDialogPerc'
+      ]
+      let ret = ''
+      for(const v of variables) ret += `--${v}: ${this[v]};`
+      return ret
+    }
   },
   created() {
     this.$nuxt.$on('pageTitle', (data) => {
@@ -235,6 +290,9 @@ body {
   padding-left: .5rem;
   padding-right: .5rem;
 }
+.nav-item {
+  font-size: var(--navItem);
+}
 .nav-item > a,
 .nav-item > a:hover {
   color: var(--kBlack) !important;
@@ -301,22 +359,22 @@ body {
 /* -------------------- 標題及內文樣式 -------------------- */
 h1 {
   color: var(--kBlack);
-  font-size: 64px;
+  font-size: var(--h1);
   font-weight: 900;
 }
 h2 {
   color: var(--kBlack);
-  font-size: 48px;
+  font-size: var(--h2);
   font-weight: 700;
 }
 h5 {
   color: var(--kLightBlack);
-  font-size: 24px;
+  font-size: var(--h5);
   font-weight: 500;
 }
 h6 {
   color: var(--kLightBlack);
-  font-size: 18px;
+  font-size: var(--h6);
   font-weight: 700;
 }
 
@@ -327,7 +385,7 @@ h6 {
   background: -o-linear-gradient(to left, var(--kBlue), var(--kBlue60));
   background: linear-gradient(to left, var(--kBlue), var(--kBlue60));
   border: none;
-  font-size: 18px;
+  font-size: var(--btnFS);
 }
 .bg-grad-gray {
   background: -webkit-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
@@ -335,7 +393,7 @@ h6 {
   background: -o-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
   background: linear-gradient(to left, var(--kBlack), var(--kLightBlack));
   border: none;
-  font-size: 18px;
+  font-size: var(--btnFS);
 }
 .bg-grad-white {
   background: -webkit-linear-gradient(to bottom right, #FFFFFF, var(--kWhite30), #FFFFFF);
@@ -343,7 +401,7 @@ h6 {
   background: -o-linear-gradient(to bottom right, #FFFFFF, var(--kWhite30), #FFFFFF);
   background: linear-gradient(to bottom right, #FFFFFF, var(--kWhite30), #FFFFFF);
   border: none;
-  font-size: 18px;
+  font-size: var(--btnFS);
 }
 .bg-grad-purple {
   background: -webkit-linear-gradient(to left, var(--kPurple), var(--kPurple60));
@@ -351,6 +409,6 @@ h6 {
   background: -o-linear-gradient(to left, var(--kPurple), var(--kPurple60));
   background: linear-gradient(to left, var(--kPurple), var(--kPurple60));
   border: none;
-  font-size: 18px;
+  font-size: var(--btnFS);
 }
 </style>

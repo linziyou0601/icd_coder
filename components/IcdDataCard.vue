@@ -27,16 +27,16 @@ export default {}
 	-moz-box-shadow: 1px 1px 20px #EDEDEDA6;
 }
 .icd-card-code-area {
-  min-width: 90px;
-  max-width: 90px;
+  min-width: var(--icdCodeSquareWrap);
+  max-width: var(--icdCodeSquareWrap);
 }
 .icd-card-code {
   color: var(--kLight);
-  font-size: 14px;
+  font-size: var(--icdCode);
   font-weight: 900;
-  width: 65px;
-  height: 65px;
-  line-height: 65px;
+  width: var(--icdCodeSquare);
+  height: var(--icdCodeSquare);
+  line-height: var(--icdCodeSquare);
   text-align: center;
   vertical-align: middle;
   --smooth-corners: 3;
@@ -45,12 +45,12 @@ export default {}
 }
 .icd-card-title {
   color: var(--kDark);
-  font-size: 16px;
+  font-size: var(--icdTitle);
   font-weight: 700;
 }
 .icd-card-content {
   color: var(--kLightDark);
-  font-size: 10px;
+  font-size: var(--icdContent);
   font-weight: 500;
 }
 </style>

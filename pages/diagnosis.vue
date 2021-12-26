@@ -23,12 +23,20 @@
               placeholder="請輸入病摘"
               rows="18"
             ></b-form-textarea>
-            <b-button
-              class="bg-grad-blue analyze-btn mb-3"
-              @click="fetchResults"
-            >
-              分析
-            </b-button>
+            <b-row align-h="between" class="mx-1">
+              <b-button
+                class="bg-grad-gray analyze-btn mb-3"
+                @click="loadDiagnosis"
+              >
+                載入病摘
+              </b-button>
+              <b-button
+                class="bg-grad-blue analyze-btn mb-3"
+                @click="fetchResults"
+              >
+                分析
+              </b-button>
+            </b-row>
           </b-card>
         </b-col>
 
@@ -70,15 +78,18 @@
     <AlertDialog />
     <LoadingDialog />
     <IcdDataDialog />
+    <DiagnosisSelDialog :diagnoses-key="Object.keys(diagnosesJson)"/>
   </div>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
 import Repository from '../services/Repository'
+import diagnosesJson from '../static/diagnoses.json'
 export default {
   data() {
     return {
+      diagnosesJson,
       pageTitle: '疾病碼分析',
       showToTopBtn: false,
       diagnosis: '',
@@ -102,7 +113,7 @@ export default {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
-    ...mapMutations(['fireAlertDialog', 'fireLoadingDialog', 'closeLoadingDialog', 'fireIcdDataDialog']),
+    ...mapMutations(['fireAlertDialog', 'fireLoadingDialog', 'closeLoadingDialog', 'fireIcdDataDialog', 'fireDiagnosisSelDialog', 'closeDiagnosisSelDialog']),
     scrollToElement(val) {
       const el = this.$refs[val];
       if (el) el.scrollIntoView({behavior: 'smooth'});
@@ -110,6 +121,13 @@ export default {
     onScroll () {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
       this.showToTopBtn = currentScrollPosition > 200
+    },
+    loadDiagnosis() {
+      this.fireDiagnosisSelDialog()
+    },
+    chooseDiag(diagKey) {
+      this.diagnosis = this.diagnosesJson[diagKey]
+      this.closeDiagnosisSelDialog()
     },
     fetchResults() {
       this.result = []
@@ -150,15 +168,14 @@ export default {
 }
 .dianosis-panel-title {
   color: var(--kDark);
-  font-size: 28px;
+  font-size: var(--diagPanelTitle);
   font-weight: 900;
 }
 /* -------------------- 輸入區 -------------------- */
 .input-panel {
   color: var(--kLightDark);
-  font-size: 1rem;
+  font-size: var(--diagInput);
   font-weight: 500;
-  overflow-y: hidden !important;
   border: #EDEDED 1px solid;
   border-radius: 20px;
 }

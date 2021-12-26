@@ -15,12 +15,14 @@ const state = () => ({
     description: '',
     percentage: 0,
   },
+  _diagnosisSelDialogShow: false,
 })
 
 const getters = {
   alertDialog: (state) => state._alertDialog,
   loadingDialogShow: (state) => state._loadingDialogShow,
   icdDataDialog: (state) => state._icdDataDialog,
+  diagnosisSelDialogShow: (state) => state._diagnosisSelDialogShow,
 }
 
 const actions = {
@@ -58,6 +60,12 @@ const mutations = {
   },
   closeIcdDataDialog(state) {
     state._icdDataDialog.show = false
+  },
+  fireDiagnosisSelDialog(state) {
+    state._diagnosisSelDialogShow = true
+  },
+  closeDiagnosisSelDialog(state) {
+    state._diagnosisSelDialogShow = false
   },
 }
 

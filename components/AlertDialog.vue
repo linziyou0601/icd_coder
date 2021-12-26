@@ -92,12 +92,12 @@ export default {
 }
 .dialog-title {
   color: var(--kBlack);
-  font-size: 36px;
+  font-size: var(--dialogTitle);
   font-weight: 700;
 }
 .dialog-content {
   color: var(--kLightBlack);
-  font-size: 18px;
+  font-size: var(--dialogContent);
   font-weight: 500;
 }
 
