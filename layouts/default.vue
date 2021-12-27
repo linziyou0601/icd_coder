@@ -27,7 +27,7 @@
             <b-button
               size="lg"
               variant="transparent"
-              class="mb-2"
+              class="mb-2 font-size-btn"
               @click="lgFontSize = !lgFontSize"
             >
               <fa :icon="['fas', `search-${lgFontSize ? 'minus': 'plus'}`]" />
@@ -211,6 +211,7 @@ export default {
   --kGreen: #7dbd39;
   --kGreen60: #7dbd39a6;
   --kBlack: #2e3846;
+  --kBlack60: #2e3846a6;
   --kLightBlack: #516272;
   --kBgLightGreen: #fafff5;
   --kBgLightBlue: #e8f9ff;
@@ -319,6 +320,9 @@ body {
 .nav-active > a::after {
   opacity: 1;
 }
+.font-size-btn {
+  color: var(--kLightBlack);
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -388,10 +392,10 @@ h6 {
   font-size: var(--btnFS);
 }
 .bg-grad-gray {
-  background: -webkit-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
-  background: -moz-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
-  background: -o-linear-gradient(to left, var(--kBlack), var(--kLightBlack));
-  background: linear-gradient(to left, var(--kBlack), var(--kLightBlack));
+  background: -webkit-linear-gradient(to left, var(--kBlack), var(--kBlack60));
+  background: -moz-linear-gradient(to left, var(--kBlack), var(--kBlack60));
+  background: -o-linear-gradient(to left, var(--kBlack), var(--kBlack60));
+  background: linear-gradient(to left, var(--kBlack), var(--kBlack60));
   border: none;
   font-size: var(--btnFS);
 }
